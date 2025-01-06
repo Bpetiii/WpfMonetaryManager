@@ -1,0 +1,34 @@
+﻿<Window x:Class="WpfMonetaryManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMonetaryManager"
+        mc:Ignorable="d"
+        Title="Monetary Manager 🤑💲💸💹" Height="730" Width="600"
+        ResizeMode="NoResize">
+    <Grid>
+        <!-- Balance Display -->
+        <TextBlock x:Name="Balance" Text="0" FontSize="48" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+        <TextBlock Text="HUF" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,80,0,0"/>
+
+        <!-- Input Fields and Buttons (One Line) -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,110,0,0">
+            <Label>Összeg</Label>
+            <Label Margin="60,0,0,0">Leírás</Label>
+        </StackPanel>
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,130,0,0">
+            <TextBox x:Name="Amount" Margin="5" Width="100" Height="30" Text="" VerticalContentAlignment="Center" />
+            <TextBox x:Name="Description" Margin="5" Width="200" Height="30" Text="" VerticalContentAlignment="Center" />
+            <Button x:Name="IncomeButton" Margin="5" Content="Bevétel" Width="80" Height="30" Click="IncomeButton_OnClick"/>
+            <Button x:Name="ExpanseButton" Margin="5" Content="Kiadás" Width="80" Height="30" Click="ExpanseButton_OnClick"/>
+        </StackPanel>
+
+        <!-- ListBox -->
+        <ListBox x:Name="MonetaryList" Width="480" Height="400" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0"/>
+
+        <!-- Save Button -->
+        <Button x:Name="SaveButton" Content="Mentés" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,30" Click="SaveButton_OnClick"/>
+    </Grid>
+</Window>
